@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.DatosPersonalesSinNomb"
+             xmlns:local="clr-namespace:Proyecto;assembly=Proyecto">
+    <ContentPage.Content>
+        <ScrollView>        
+        <RelativeLayout  x:Name="relativo" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+            <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+                <Label Text="Mi perfil"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,15,0,20"
+                       TextColor="Black"
+                       FontSize="25"/>
+            </StackLayout>
+            <StackLayout Padding="5" Spacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.3,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+                <StackLayout>
+                    <Label Text="tu cumpleaños" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                    <!--<Editor BackgroundColor="White" HorizontalOptions="Center" WidthRequest="225" x:Name="editorCumple"/>-->
+                    <local:MyDatePicker WidthRequest="120" x:Name="editorCumple" HorizontalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.2,Constant=0}">
+                    <StackLayout>
+                        <Label Text="nacionalidad" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                        <!--<Editor BackgroundColor="White" WidthRequest="125" x:Name="editorNacionalidad"/>-->
+                        <Picker HorizontalOptions="Center" WidthRequest="95" x:Name="editorNacionalidad" >
+                            <Picker.Items>
+                                <!-- <x:String>España</x:String>
+                                    <x:String>EE.UU</x:String>
+                                    <x:String>Francia</x:String>
+                                    <x:String>Argentina</x:String>
+                                    <x:String>Alemania</x:String>
+                                    <x:String>Italia</x:String>
+                                    <x:String>Ecuador</x:String>
+                                    <x:String>Chile</x:String>
+                                    <x:String>Colombia</x:String>
+                                    <x:String>Perú</x:String>
+                                    <x:String>Canadá</x:String>
+                                    <x:String>Grecia</x:String>
+                                    <x:String>Holanda</x:String>
+                                    <x:String>Bélgica</x:String>-->
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="sexo" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                        <!--<Editor BackgroundColor="White" WidthRequest="75" x:Name="editorSexo"/>-->
+                        <Picker HorizontalOptions="Center" WidthRequest="90" x:Name="editorSexo">
+                            <Picker.Items>
+                                <x:String>Hombre</x:String>
+                                <x:String>Mujer</x:String>
+                                <x:String>Otro</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+                <StackLayout RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.2,Constant=0}">
+                    <Button x:Name="botonOK"
+                    BackgroundColor="#4cc7ea"
+                    Text="Ok"
+                    TextColor="White"
+                    FontSize="18"
+                    BorderRadius="20"
+                    />
+                </StackLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

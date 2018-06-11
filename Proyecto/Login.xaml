@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Login">
+    <ContentPage.Content>
+        <ScrollView>
+        <RelativeLayout x:Name="relativo" BackgroundColor="White">
+            <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+                <Label Text="Login"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,30,0,50"
+                       TextColor="Black"
+                       FontSize="25"/>
+            </StackLayout>
+
+            <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.25,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+
+                <Label Text="correo electrónico"
+                       HorizontalTextAlignment="Center"  
+                       TextColor="Black"
+                       FontSize="18"/>
+
+                    <Entry Grid.Column="0" Grid.Row="0" x:Name="correo"
+                        HorizontalTextAlignment="Center"
+                        BackgroundColor="White"
+                        Keyboard="Email"
+                        TextColor="Black"/>
+
+
+            </StackLayout>
+
+                <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.50,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+
+                    <Label Text="contraseña"
+                   HorizontalTextAlignment="Center"
+                       
+                   TextColor="Black"
+                   FontSize="18"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="contrasena"
+                       BackgroundColor="White"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       IsPassword="True"/>
+
+                    <Image x:Name="eye" Grid.Row="0" HorizontalOptions="End">
+                           <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="mostrarPass"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+            </StackLayout>
+                <StackLayout RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.2,Constant=0}">
+                    <Button x:Name="acceder"
+                    BackgroundColor="#4cc7ea"
+                    Text="Ok"
+                    TextColor="White"
+                    FontSize="18"
+                    BorderRadius="20"
+                    />
+                </StackLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

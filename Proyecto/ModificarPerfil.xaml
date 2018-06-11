@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.ModificarPerfil"
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:local="clr-namespace:Proyecto;assembly=Proyecto">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" BackgroundColor="White">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}">
+
+                <StackLayout Padding="5" Spacing="5" HorizontalOptions="Center" VerticalOptions="Center" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.29, Constant=0}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}">
+
+
+                    <ci:CircleImage   
+                        HeightRequest="150"   
+                        WidthRequest="150" 
+                        x:Name="miImagenPerfil"
+                        BorderThickness="1"
+                        Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="cambiarFoto"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </ci:CircleImage>
+
+
+                    <!--<Frame Padding="0" CornerRadius="75" WidthRequest="150" HeightRequest="150" BackgroundColor="White">
+                        <Image x:Name="miImagenPerfil"
+                       Aspect="AspectFill" 
+                       VerticalOptions="FillAndExpand" 
+                       HorizontalOptions="FillAndExpand">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                Tapped="cambiarFoto"
+                                NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>-->
+
+                </StackLayout>
+
+                <StackLayout Padding="5" Spacing="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.28,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=0}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+
+                    <StackLayout Spacing="-1">
+                        <Label Text="nombre y apellido" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                        <Entry BackgroundColor="White" HorizontalOptions="Center" WidthRequest="225" x:Name="editorNombre" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="tu cumpleaños" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                        <!--<Entry BackgroundColor="White" HorizontalOptions="Center" WidthRequest="225" x:Name="editorCumple"/>-->
+                        <local:MyDatePicker WidthRequest="120" x:Name="editorCumple" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="Center">
+                        <StackLayout>
+                            <Label Text="nacionalidad" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                            <!--<Entry BackgroundColor="White" WidthRequest="125" x:Name="editorNacionalidad"/>-->
+                            <Picker HorizontalOptions="Center" WidthRequest="95" x:Name="editorNacionalidad" >
+                                <Picker.Items>
+                                    
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="sexo" HorizontalOptions="Center" TextColor="Black" FontSize="20"/>
+                            <!--<Entry BackgroundColor="White" WidthRequest="75" x:Name="editorSexo"/>-->
+                            <Picker HorizontalOptions="Center" WidthRequest="85" x:Name="editorSexo">
+                                <Picker.Items>
+                                    <x:String>Hombre</x:String>
+                                    <x:String>Mujer</x:String>
+                                    <x:String>Otro</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.2,Constant=0}">
+                    <Button x:Name="actPerfil"
+                    BackgroundColor="#4cc7ea"
+                    Text="Ok"
+                    TextColor="White"
+                    FontSize="18"
+                    BorderRadius="20"
+                    />
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.MiPerfil"
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="TresPuntosVertical.png" Text="Item 1" Priority="0" Clicked="menuAjustes" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="30,0,0,0" Padding="5" Spacing="5" HorizontalOptions="Start"  VerticalOptions="Center">
+
+
+                    <ci:CircleImage   
+                        HeightRequest="160"   
+                        WidthRequest="160" 
+                        x:Name="miImagenPerfil"
+                        BorderThickness="1"
+                        BorderColor="LightGray"
+                        Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="irModPerfil"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </ci:CircleImage>
+
+                    <!--<Frame Padding="0" CornerRadius="80" WidthRequest="160" HeightRequest="160">
+                        <Image x:Name="miImagenPerfil"
+                       Aspect="AspectFill" 
+                       VerticalOptions="FillAndExpand" 
+                       HorizontalOptions="FillAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="irModPerfil"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    </Frame>-->
+
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Padding="20">
+                        <Label x:Name="miNombre"
+                           TextColor="Black"
+                           HorizontalOptions="Center"/>
+
+                        <Button x:Name="subirnuevafoto"
+                            Text="Subir foto"
+                            TextColor="Gray"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center"
+                            Margin="0,10,0,0"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End" Margin="0,-30,0,0">
+                    <Button Text="seguir"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="Gray"/>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Start">
+                    <Label Text="seguidores"
+                       TextColor="Black"
+                       
+                       Margin="15,0,0,0"/>
+
+                    <Label
+                       x:Name="numSeguidores"
+                       TextColor="Black"
+                       WidthRequest="55"/>
+
+                    <Image Source="ic_favorite_blue.png"
+                       VerticalOptions="Center"/>
+
+                    <Label x:Name="numMGustas"
+                       TextColor="Black"
+                       WidthRequest="110"/>
+
+                    <Label Text="redes"
+                       TextColor="Black"
+                       HorizontalOptions="End"/>
+
+                    <Label x:Name="numRedes"
+                       TextColor="Black"
+                       Margin="0,0,15,0"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" BackgroundColor="Gray"/>
+
+
+                <StackLayout Padding="0">
+                 
+                    <ListView x:Name="listContenido"  CachingStrategy="RecycleElement" HorizontalOptions="CenterAndExpand" RowHeight="90">
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <ViewCell>
+
+
+                                    <Grid BackgroundColor="White" >
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Left column - BindingContext set to ModelPair.Item1  -->
+
+                                        <StackLayout Grid.Column="0" Orientation="Vertical" >
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding item1}" />
+                                            </StackLayout.GestureRecognizers>
+                                            <Image Aspect="AspectFill"  Source="{Binding item1.Imagen}"  HeightRequest="90" Margin="-2.5,0,-2.5,0"/>
+
+                                            <!--<Label Text="{Binding item1.name}" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="18" />-->
+                                        </StackLayout>
+
+                                        <!-- Right column - BindingContext set to ModelPair.Item2 -->
+                                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding item2}" />
+                                            </StackLayout.GestureRecognizers>
+                                            <Image Aspect="AspectFill"  Source="{Binding item2.Imagen}"  HeightRequest="90" Margin="-2.5,0,-2.5,0"/>
+
+                                            <!--<Label Text="{Binding item2.name}" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="18" />-->
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Column="2" Orientation="Vertical" >
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding item3}" />
+                                        </StackLayout.GestureRecognizers>
+                                        <Image Aspect="AspectFill"  Source="{Binding item3.Imagen}"  HeightRequest="90" Margin="-2.5,0,-2.5,0"/>
+
+                                            <!--<Label Text="{Binding item2.name}" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="18" />-->
+                                        </StackLayout>
+
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+                <!--<BoxView HeightRequest="1" BackgroundColor="Gray"/>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="botonchat.png"
+                       WidthRequest="35"/>
+
+                <Button BackgroundColor="LightGray"
+                        BorderRadius="50"
+                        WidthRequest="25"
+                        HeightRequest="5"/>
+
+            </StackLayout>-->
+
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

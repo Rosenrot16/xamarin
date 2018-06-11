@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.CambiarContrasena">
+    <ContentPage.Content>
+        <ScrollView>
+        <RelativeLayout BackgroundColor="White" x:Name="relativo">
+                <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+                    <Label Text="Cambiar contraseña"
+                       TextColor="Black"
+                       FontSize="25"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,12,0,30"/>
+                </StackLayout>
+
+                <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.15,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+                    <Label Text="contraseña actual"
+                       TextColor="Black"
+                       FontSize="18"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,-7"/>
+
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry  x:Name="actualPass"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            IsPassword="True"
+                            HorizontalTextAlignment="Center"/>
+
+                    <Image x:Name="eye" Grid.Row="0" HorizontalOptions="End" Source="ic_visibility_off_black_18dp.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="mostrarPass"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                
+
+
+            </StackLayout>
+
+                <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.32,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+
+                <Label Text="contraseña nueva"
+                       TextColor="Black"
+                       FontSize="18"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,-7"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry  x:Name="nuevaPass"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            IsPassword="True"
+                            HorizontalTextAlignment="Center"/>
+
+                    <Image x:Name="eyen" Grid.Row="0" HorizontalOptions="End" Source="ic_visibility_off_black_18dp.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="mostrarPassNew"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                    
+                    
+                
+
+            </StackLayout>
+
+                <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.48,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+
+                    <Label Text="repetir contraseña nueva"
+                       TextColor="Black"
+                       FontSize="18"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,-7"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="nuevaPassR"
+                       BackgroundColor="White"
+                       TextColor="Black"
+                       IsPassword="True"
+                       HorizontalTextAlignment="Center"/>
+
+                    <Image x:Name="eyenr" Grid.Row="0" HorizontalOptions="End" Source="ic_visibility_off_black_18dp.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="mostrarPassNewR"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                
+
+            </StackLayout>
+
+            <StackLayout Margin="0,-40,0,0" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.73,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.2,Constant=0}">
+                <Button x:Name="cambiar"
+                    BackgroundColor="#4cc7ea"
+                    Text="Ok"
+                    TextColor="White"
+                    FontSize="18"
+                    BorderRadius="20"
+                    />
+            </StackLayout>
+
+        </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

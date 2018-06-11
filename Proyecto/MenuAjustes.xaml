@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.MenuAjustes">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+
+            <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+            <Label Text="   Cambiar contraseña"
+                    TextColor="Black"
+                    HeightRequest="40" 
+                    VerticalTextAlignment="Center"
+                    FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="irCambiarContrasena"
+                        NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <BoxView HeightRequest="1" BackgroundColor="LightGray"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

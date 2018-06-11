@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.RestablecerContrasenia">
+    <ContentPage.Content>
+        <RelativeLayout BackgroundColor="White">
+            <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+                <Label Text="Restablecer contraseña"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,20,0,50"
+                   TextColor="Black"
+                   FontSize="20"/>
+            </StackLayout>
+
+            <StackLayout  Orientation="Vertical" RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.30,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}">
+
+                <Label Text="correo electrónico"
+                   TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20"
+                   FontSize="18"
+                   />
+
+                <Entry  x:Name="correoRest"
+                    BackgroundColor="White"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,0,0,20"
+                    Keyboard="Email"
+                    TextColor="Black"/>
+
+            </StackLayout>
+            <StackLayout RelativeLayout.XConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=50}" RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8,Constant=0}" RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-100}" RelativeLayout.HeightConstraint ="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.2,Constant=0}">
+                <Button x:Name="restablecer"
+                    BackgroundColor="#4cc7ea"
+                    Text="Ok"
+                    TextColor="White"
+                    FontSize="18"
+                    BorderRadius="20"
+                    />
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
