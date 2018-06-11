@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto.Localizacion">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listado" BackgroundColor="#111" CachingStrategy="RecycleElement" HasUnevenRows="True" HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout Orientation="Vertical" Padding="20">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding item}" />
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="{Binding item.Direccion}" TextColor="Red" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="18" />
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
